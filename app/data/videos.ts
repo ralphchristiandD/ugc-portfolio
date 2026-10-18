@@ -12,26 +12,23 @@
 export const niches = ['Tech & Gadgets', 'Home & Living', 'Food & Drink', 'Lifestyle'] as const
 export type Niche = typeof niches[number]
 
-export type Language = 'EN' | 'TL' | '中文'
-
 export interface Video {
   style: string // e.g. "Unboxing", "Voiceover ad"
   brand: string
   niche: Niche
-  language: Language
   src?: string // e.g. '/videos/brand-unboxing.mp4'
   poster?: string // e.g. '/videos/brand-unboxing.jpg'
 }
 
 export const videos: Video[] = [
-  { style: 'Unboxing', brand: 'Brand name', niche: 'Tech & Gadgets', language: 'EN' },
-  { style: 'Product demo', brand: 'Brand name', niche: 'Home & Living', language: 'TL' },
-  { style: 'Voiceover ad', brand: 'Brand name', niche: 'Food & Drink', language: 'EN' },
-  { style: 'Talking to camera', brand: 'Brand name', niche: 'Lifestyle', language: '中文' },
-  { style: 'How-to', brand: 'Brand name', niche: 'Tech & Gadgets', language: 'EN' },
-  { style: 'Skit', brand: 'Brand name', niche: 'Food & Drink', language: 'TL' },
-  { style: 'Testimonial', brand: 'Brand name', niche: 'Home & Living', language: '中文' },
-  { style: 'First impressions', brand: 'Brand name', niche: 'Lifestyle', language: 'EN' },
+  { style: 'Unboxing', brand: 'Brand name', niche: 'Tech & Gadgets' },
+  { style: 'Product demo', brand: 'Brand name', niche: 'Home & Living' },
+  { style: 'Voiceover ad', brand: 'Brand name', niche: 'Food & Drink' },
+  { style: 'Talking to camera', brand: 'Brand name', niche: 'Lifestyle' },
+  { style: 'How-to', brand: 'Brand name', niche: 'Tech & Gadgets' },
+  { style: 'Skit', brand: 'Brand name', niche: 'Food & Drink' },
+  { style: 'Testimonial', brand: 'Brand name', niche: 'Home & Living' },
+  { style: 'First impressions', brand: 'Brand name', niche: 'Lifestyle' },
 ]
 
 // The formats Geff offers ("What I make"). Placeholder wording, confirm with Geff.

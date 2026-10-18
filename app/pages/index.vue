@@ -3,7 +3,7 @@ import { profile } from '~/data/profile'
 import { formats, included, niches, videos } from '~/data/videos'
 
 useSeoMeta({
-  title: `${profile.name} | UGC Creator in English, Tagalog & Mandarin`,
+  title: `${profile.name} | UGC Creator`,
   description: profile.pitch,
 })
 
@@ -20,21 +20,20 @@ const year = new Date().getFullYear()
     <SiteHeader />
 
     <main>
-      <!-- HERO: Geff's greeting in all three languages he creates in -->
+      <!-- HERO -->
       <section class="overflow-hidden bg-ink text-white">
         <div class="container-page grid items-center gap-16 pb-20 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
           <div>
             <p class="rise eyebrow text-sky">{{ profile.role }} based in {{ profile.location }}</p>
-            <h1 class="mt-6 space-y-1.5 text-[1.8rem] font-semibold leading-[1.15] sm:text-5xl sm:leading-[1.1] lg:text-[3.4rem]">
+            <h1 class="mt-6 text-[2.5rem] font-bold leading-[1.08] sm:text-6xl lg:text-[4rem]">
               <span
-                v-for="(g, i) in profile.greetings"
-                :key="g.lang"
-                :lang="g.lang"
-                class="rise flex flex-wrap items-center gap-x-3"
+                v-for="(line, i) in profile.headline"
+                :key="line"
+                class="rise block"
+                :class="i > 0 ? 'text-white/70' : ''"
                 :style="{ animationDelay: `${120 + i * 120}ms` }"
               >
-                {{ g.text }}
-                <span class="rounded-full border border-sun/60 px-2 py-0.5 font-sans text-xs font-semibold tracking-normal text-sun" aria-hidden="true">{{ g.tag }}</span>
+                {{ line }}
               </span>
             </h1>
             <p class="rise mt-8 max-w-lg text-lg leading-relaxed text-white/75" style="animation-delay: 480ms">
@@ -82,8 +81,7 @@ const year = new Date().getFullYear()
             <div class="max-w-2xl">
               <h2 class="text-4xl font-semibold sm:text-5xl">The work</h2>
               <p class="mt-4 text-lg leading-relaxed text-muted">
-                Short vertical videos for TikTok, Reels, Shorts, and paid ads. Each one is tagged with its language:
-                EN for English, TL for Tagalog, <span lang="zh">中文</span> for Mandarin.
+                Short vertical videos for TikTok, Reels, Shorts, and paid ads.
               </p>
             </div>
             <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter videos by category">
@@ -107,7 +105,7 @@ const year = new Date().getFullYear()
       </section>
 
       <!-- WHAT I MAKE -->
-      <section class="section bg-white">
+      <section id="services" class="section bg-white">
         <div class="container-page grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <div v-reveal class="reveal">
             <h2 class="text-4xl font-semibold sm:text-5xl">What I make</h2>
@@ -132,7 +130,7 @@ const year = new Date().getFullYear()
               class="reveal"
               :style="{ transitionDelay: `${i * 80}ms` }"
             >
-              <span class="grid size-11 place-items-center rounded-xl bg-sun/25 text-ink">
+              <span class="grid size-11 place-items-center rounded-xl bg-sun-soft text-ink">
                 <FormatIcon :name="f.icon" />
               </span>
               <h3 class="mt-4 text-lg font-semibold">{{ f.title }}</h3>
@@ -206,19 +204,41 @@ const year = new Date().getFullYear()
           </p>
           <a :href="`mailto:${profile.email}`" class="btn-sun mt-10">Email Geff</a>
           <p class="mt-4 text-sm text-sky">{{ profile.email }}</p>
-          <ul class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <li v-for="s in profile.socials" :key="s.label">
-              <a :href="s.href" target="_blank" rel="noopener" class="link-underline inline-block py-1 text-white/80 hover:text-white">{{ s.label }}</a>
-            </li>
-          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-ink-3 bg-ink">
-      <div class="container-page flex flex-col gap-2 py-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
-        <p>&copy; {{ year }} {{ profile.name }}</p>
-        <a href="#top" class="link-underline self-start py-1 hover:text-white sm:self-auto">Back to top</a>
+    <!-- FOOTER: light card with details on the left, links on the right -->
+    <footer class="bg-white py-8 sm:py-10">
+      <div class="container-page">
+        <div class="flex flex-col gap-8 rounded-2xl border border-line bg-sun-soft px-6 py-8 sm:flex-row sm:items-start sm:justify-between sm:px-10">
+          <div>
+            <p class="font-display text-xl font-semibold text-ink">{{ profile.brand }}</p>
+            <p class="mt-2 text-sm text-muted">
+              {{ profile.location }} | <a :href="`mailto:${profile.email}`" class="link-underline hover:text-ink">{{ profile.email }}</a>
+            </p>
+            <p class="mt-1.5 text-sm text-muted">&copy; {{ profile.name }}, {{ year }}</p>
+            <!-- -ml-2.5 lines the first icon up with the text above (icons sit in 40px tap circles) -->
+            <ul class="-ml-2.5 mt-5 flex gap-1">
+              <li v-for="s in profile.socials" :key="s.label">
+                <a
+                  :href="s.href"
+                  target="_blank"
+                  rel="noopener"
+                  :aria-label="s.label"
+                  class="grid size-10 place-items-center rounded-full text-ink transition-colors hover:bg-white"
+                >
+                  <SocialIcon :name="s.label" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul class="flex gap-6 text-sm font-medium sm:flex-col sm:items-end sm:gap-3">
+            <li><a href="#work" class="link-underline py-1 text-ink">Work</a></li>
+            <li><a href="#services" class="link-underline py-1 text-ink">Services</a></li>
+            <li><a href="#contact" class="link-underline py-1 text-ink">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </div>

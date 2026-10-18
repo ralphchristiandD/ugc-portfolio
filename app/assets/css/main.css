@@ -5,9 +5,8 @@
   Use them in classes like: bg-ink, text-muted, bg-sun, font-display
 */
 @theme {
-  /* Chinese characters fall back to the device's own Chinese font */
-  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;        /* body text */
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;   /* headings */
 
   --color-ink: #0E1A33;    /* deep navy: text on light, dark sections */
   --color-ink-2: #1A2A4D;  /* raised surfaces on navy (cards, phone frame) */
@@ -15,7 +14,8 @@
   --color-paper: #F5F7FB;  /* light section background */
   --color-line: #E2E6EF;   /* borders on light */
   --color-muted: #586381;  /* secondary text on light */
-  --color-sun: #F5B841;    /* marigold accent: buttons and highlights (on navy, or with navy text) */
+  --color-sun: #F4D58D;    /* soft butter yellow: buttons and highlights (on navy, or with navy text) */
+  --color-sun-soft: #FBF4DE; /* pale cream-yellow: footer and icon backgrounds */
   --color-sky: #AFC6F7;    /* soft blue for small text on navy */
 }
 
@@ -51,7 +51,7 @@
 }
 /* Marigold button: the main call to action */
 @utility btn-sun {
-  @apply btn bg-sun text-ink hover:brightness-110;
+  @apply btn bg-sun text-ink hover:brightness-105;
 }
 /* Navy button for light sections */
 @utility btn-ink {
@@ -85,7 +85,7 @@
   transform: none;
 }
 
-/* One-time entrance for the hero greeting */
+/* One-time entrance for the hero */
 @keyframes rise {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }

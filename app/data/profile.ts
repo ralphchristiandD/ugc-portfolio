@@ -5,23 +5,19 @@
 */
 
 export const profile = {
-  brand: "Geff's Take", // TODO: confirm the creator brand name with Geff
+  brand: 'Meridores Studio', // TODO: confirm the creator brand name with Geff
   name: 'Geff Meridores',
   role: 'UGC Creator',
   location: 'California', // TODO: confirm how specific he wants this
   email: 'hello@example.com', // TODO: Geff's real email
 
-  // The hero greeting, one line per language he creates in
-  greetings: [
-    { lang: 'en', tag: 'EN', text: "Hi, I'm Geff." },
-    { lang: 'tl', tag: 'TL', text: 'Kumusta, ako si Geff.' },
-    { lang: 'zh', tag: '中文', text: '你好，我是 Geff' },
-  ],
+  // Hero headline: two short lines
+  headline: ["Hi, I'm Geff.", 'I make videos people trust.'],
 
-  pitch: 'I make honest, scroll-stopping UGC videos for brands, in English, Tagalog, and Mandarin.',
+  pitch: 'Honest, scroll-stopping UGC for brands: unboxings, demos, voiceovers, and reviews made for TikTok, Reels, and paid ads.',
 
   // Short facts under the hero. Only true statements (no invented numbers).
-  facts: ['Content in 3 languages', 'Made for TikTok, Reels & Shorts', 'Based in California'],
+  facts: ['Made for TikTok, Reels & Shorts', 'Ads and organic content', 'Based in California'],
 
   // TODO: Geff's real profile links
   socials: [
@@ -33,7 +29,7 @@ export const profile = {
 
   // TODO: a short real bio from Geff
   bio: [
-    "I'm Geff, a California-based UGC creator. I make videos that feel like a real recommendation, and I can make them in English, Tagalog, or Mandarin, so one creator can reach three audiences.",
+    "I'm Geff, a California-based UGC creator. I make videos that feel like a real recommendation from someone your customers trust, not another ad they scroll past.",
     '[A few more lines about Geff: what he loves to film, his background, and why brands enjoy working with him.]',
   ],
 
@@ -41,7 +37,7 @@ export const profile = {
   approach: [
     { title: 'Feels like a recommendation, not an ad', text: 'Products filmed the way people actually use them at home.' },
     { title: 'Detail-first', text: 'Every shot planned and every caption checked before it reaches you.' },
-    { title: 'One creator, three languages', text: 'Reach English, Filipino, and Mandarin-speaking customers from one shoot.' },
+    { title: 'Made for the platform', text: 'Shot vertical, captioned, and edited for how people actually watch.' },
     { title: 'Easy to work with', text: 'Clear updates and on-time delivery, from brief to final cut.' },
   ],
 

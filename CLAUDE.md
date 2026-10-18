@@ -1,7 +1,8 @@
 # Project Rulebook: Geff's UGC Portfolio
 
-A one-page portfolio for **Geff Meridores**, a UGC (user-generated content) creator who makes
-videos in **English, Tagalog, and Mandarin**. Separate from the Enrich agency website.
+A one-page portfolio for **Geff Meridores**, a UGC (user-generated content) creator.
+The site is **English only** (developer's choice). Separate from the Enrich agency website.
+Placeholder brand name: **Meridores Studio** (not confirmed yet).
 Deployed on **Vercel (free plan)** as a static site.
 
 ## About me (the developer)
@@ -34,12 +35,12 @@ public/videos/      Compressed .mp4 files (3–8 MB, vertical 9:16) + cover imag
 ## Design rules
 
 - **Colors** (tokens in `main.css`): `ink` navy #0E1A33 (dark sections, text), `ink-2`/`ink-3` (surfaces and
-  borders on navy), `paper` #F5F7FB (light sections), `muted` #586381 (secondary text), `sun` marigold #F5B841
-  (buttons/highlights, only on navy or with navy text), `sky` #AFC6F7 (small text on navy).
-- **Fonts:** Bricolage Grotesque (`font-display`) for headings, Instrument Sans for body.
-  Chinese falls back to the device's own Chinese font.
-- **Signature:** the hero greets in all three languages, each with a language tag (EN / TL / 中文).
-  Every video card shows its language tag too.
+  borders on navy), `paper` #F5F7FB (light sections), `muted` #586381 (secondary text), `sun` soft butter
+  yellow #F4D58D (buttons/highlights, only on navy or with navy text; developer found marigold too strong),
+  `sun-soft` #FBF4DE (footer card, icon backgrounds), `sky` #AFC6F7 (small text on navy).
+- **Fonts:** Plus Jakarta Sans (`font-display`) for headings, Instrument Sans for body (developer likes it).
+- **Footer:** light `sun-soft` rounded card: brand, "location | email", ©, social icons on the left;
+  Work / Services / Contact links stacked on the right. No "back to top" link.
 - **Buttons:** `btn-sun` (main action), `btn-ink` (on light), `btn-ghost` (outline on navy). Pill shaped.
 - **Animation:** hero `rise` on load, gentle `v-reveal` fade-up on sections. Off under reduced motion.
 - **Mobile first:** must look right at 360px, 390px, and 1440px wide.

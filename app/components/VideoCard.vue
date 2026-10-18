@@ -1,5 +1,5 @@
 <!--
-  One work sample: a vertical video in a rounded frame, with its style, brand, and language.
+  One work sample: a vertical video in a rounded frame, with its style and brand.
   Real videos load only when played (preload="none"), so the page stays fast.
 -->
 <script setup lang="ts">
@@ -26,9 +26,6 @@ defineProps<{ video: Video }>()
         </span>
         <p class="mt-3 text-xs text-sky">Video coming soon</p>
       </div>
-      <span class="absolute left-3 top-3 rounded-full bg-white px-2.5 py-1 text-[0.6875rem] font-semibold leading-none text-ink">
-        {{ video.language }}
-      </span>
     </div>
     <figcaption class="mt-3">
       <p class="font-semibold text-ink">{{ video.style }}</p>
