@@ -9,7 +9,7 @@ export const profile = {
   name: 'Geff Meridores',
   role: 'UGC Creator',
   location: 'California', // TODO: confirm how specific he wants this
-  email: 'hello@example.com', // TODO: Geff's real email
+  email: 'meridoresgeff330@gmail.com',
 
   // Hero headline: two short lines
   headline: ["Hi, I'm Geff.", 'I make videos people trust.'],
