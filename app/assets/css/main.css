@@ -14,7 +14,7 @@
   --color-paper: #F5F7FB;  /* light section background */
   --color-line: #E2E6EF;   /* borders on light */
   --color-muted: #586381;  /* secondary text on light */
-  --color-sun: #F4D58D;    /* soft butter yellow: buttons and highlights (on navy, or with navy text) */
+  --color-sun: #F5B841;    /* marigold: buttons and highlights (on navy, or with navy text) */
   --color-sun-soft: #FBF4DE; /* pale cream-yellow: footer and icon backgrounds */
   --color-sky: #AFC6F7;    /* soft blue for small text on navy */
 }
