@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/*
+  DESIGN TOKENS: the single source of truth for colors and fonts.
+  Use them in classes like: bg-ink, text-muted, bg-sun, font-display
+*/
+@theme {
+  /* Chinese characters fall back to the device's own Chinese font */
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --color-ink: #0E1A33;    /* deep navy: text on light, dark sections */
+  --color-ink-2: #1A2A4D;  /* raised surfaces on navy (cards, phone frame) */
+  --color-ink-3: #2C3F68;  /* borders on navy */
+  --color-paper: #F5F7FB;  /* light section background */
+  --color-line: #E2E6EF;   /* borders on light */
+  --color-muted: #586381;  /* secondary text on light */
+  --color-sun: #F5B841;    /* marigold accent: buttons and highlights (on navy, or with navy text) */
+  --color-sky: #AFC6F7;    /* soft blue for small text on navy */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* anchor links don't hide under the sticky header */
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-sun;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+@utility section {
+  @apply py-20 sm:py-28;
+}
+/* Small label above a section heading */
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.16em];
+}
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-[0.9375rem] font-semibold transition-[background-color,border-color,color,transform] duration-200 active:translate-y-px;
+}
+/* Marigold button: the main call to action */
+@utility btn-sun {
+  @apply btn bg-sun text-ink hover:brightness-110;
+}
+/* Navy button for light sections */
+@utility btn-ink {
+  @apply btn bg-ink text-white hover:bg-ink-2;
+}
+/* Outline button for navy sections */
+@utility btn-ghost {
+  @apply btn border border-white/25 text-white hover:border-white/60;
+}
+@utility link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.25s ease;
+  &:hover { background-size: 100% 1px; }
+}
+/* Diagonal stripes for video placeholders */
+@utility stripes {
+  background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.035) 0 12px, transparent 12px 24px);
+}
+
+/* Gentle fade-up when blocks scroll into view (see plugins/reveal.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* One-time entrance for the hero greeting */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.rise {
+  animation: rise 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .rise { animation: none; }
+}
