@@ -208,10 +208,10 @@ const year = new Date().getFullYear()
       </section>
     </main>
 
-    <!-- FOOTER: light card with details on the left, links on the right -->
-    <footer class="bg-white py-8 sm:py-10">
-      <div class="container-page">
-        <div class="flex flex-col gap-8 rounded-2xl border border-line bg-paper px-6 py-8 sm:flex-row sm:items-start sm:justify-between sm:px-10">
+    <!-- FOOTER: full-width color fill, details on the left, links on the right -->
+    <footer class="bg-sun-soft">
+      <div class="container-page py-10 sm:py-12">
+        <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p class="font-display text-xl font-semibold text-ink">{{ profile.brand }}</p>
             <p class="mt-2 text-sm text-muted">
