@@ -37,9 +37,9 @@ public/videos/      Compressed .mp4 files (3–8 MB, vertical 9:16) + cover imag
 - **Colors** (tokens in `main.css`): `ink` navy #0E1A33 (dark sections, text), `ink-2`/`ink-3` (surfaces and
   borders on navy), `paper` #F5F7FB (light sections), `muted` #586381 (secondary text), `sun` soft butter
   yellow #F4D58D (buttons/highlights, only on navy or with navy text; developer found marigold too strong),
-  `sun-soft` #FBF4DE (footer card, icon backgrounds), `sky` #AFC6F7 (small text on navy).
+  `sun-soft` #FBF4DE (icon backgrounds only), `sky` #AFC6F7 (small text on navy).
 - **Fonts:** Plus Jakarta Sans (`font-display`) for headings, Instrument Sans for body (developer likes it).
-- **Footer:** light `sun-soft` rounded card: brand, "location | email", ©, social icons on the left;
+- **Footer:** light `paper` rounded card (not yellow, developer's choice): brand, "location | email", ©, social icons on the left;
   Work / Services / Contact links stacked on the right. No "back to top" link.
 - **Buttons:** `btn-sun` (main action), `btn-ink` (on light), `btn-ghost` (outline on navy). Pill shaped.
 - **Animation:** hero `rise` on load, gentle `v-reveal` fade-up on sections. Off under reduced motion.
