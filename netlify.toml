@@ -1,0 +1,4 @@
+# Netlify settings: builds the page as static HTML.
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
